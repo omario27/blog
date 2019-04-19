@@ -4,16 +4,20 @@
   <table>
     <tr>
       <td width="80%"><h3 [ngStyle]="{color: getColor(), 'font-weight':bold}">{{ post.title }}</h3></td>
-      <td width="10%"><p [ngStyle]="{color: 'black'}"> {{ post.created_at | date:'MM/dd/yyyy, hh:mm' }}</p></td>
+      <td width="10%"><p [ngStyle]="{color: 'black'}"> {{ post.created_at | date:'short' }}</p></td>
     </tr>
     <tr><td colspan="2">
       <p [ngStyle]="{color: getColor()}">{{ post.content }}</p>
     </td>
     </tr>
-    <tr><td colspan="2">
-      <button class="btn btn-success" (click)="loveIt()">Love it!</button>
-      <button class="btn btn-danger" (click)="dontLoveIt()">Don't love it!</button>
+    <tr><!--<td colspan="2">-->
+      <td width="80%">
+        <button class="btn btn-success" (click)="loveIt()">Love it!</button>
+        <button class="btn btn-danger" (click)="dontLoveIt()">Don't love it!</button>
     </td>
+      <td width="10%">
+        <button class="btn btn-danger" (click)="deletePost()">Supprimer</button>
+      </td>
     </tr>
   </table>
 </li>
